@@ -1,0 +1,93 @@
+> What data types do each of these values represent?
+
+"A Clockwork Orange" -> string
+42 -> integer
+09/02/1945 -> date
+98.7 -> float
+$15.99 -> string
+
+> Explain when a database would be used. Explain when a text file would be used.
+
+A relational database is used to organize data in tables that have relationships with other. We use databases to quickly add, modify, delete, and extract the data using SQL statements.
+A file is used when a flat data storage is needed with no relationships among tables.
+
+> Describe one difference between SQL and other programming languages.
+
+SQL is declarative rather than procedural.
+
+> In your own words, explain how the pieces of a database system fit together at a high level.
+
+Data is organized in tables that have rows and columns. Tables connect among each other via foreign keys.
+
+> Explain the meaning of table, row, column, and value.
+
+Table - collection of rows, columns, and values.
+Row - individual horizontal line of a table
+Column - individual vertical line of a table
+
+> List three data types that can be used in a table.
+
+Int, string, float
+
+Given this payments table, provide an English description of the following queries and include their results:
+
+     SELECT date, amount
+     FROM payments;
+
+     Extract all data in the payments table and only show date and amount columns
+
+     SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+     Extract payments greater than 500 from the payments table and only show amount
+
+     SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+     Extract all data in the payments table where payee is Mega Foods. Show all fields.
+
+Given this users table, write SQL queries using the following criteria and include the output:
+
+The email and sign-up date for the user named DeAndre Data.
+
+**Query #1**
+
+    SELECT name,email FROM users WHERE name='DeAndre Data';
+
+| name         | email             |
+| ------------ | ----------------- |
+| DeAndre Data | datad@comcast.net |
+
+---
+
+[View on DB Fiddle](https://www.db-fiddle.com/f/iQAEYktwysXqcLQHv2dwbc/0)
+
+The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+**Query #2**
+
+    SELECT userid FROM users WHERE email='aleesia.algorithm@uw.edu';
+
+| userid |
+| ------ |
+| 1      |
+
+---
+
+[View on DB Fiddle](https://www.db-fiddle.com/f/iQAEYktwysXqcLQHv2dwbc/0)
+
+All the columns for the user ID equal to 4.
+
+**Query #3**
+
+    SELECT * FROM users WHERE userid=4;
+
+| userid | name           | email             | signup                   |
+| ------ | -------------- | ----------------- | ------------------------ |
+| 4      | Brandy Boolean | bboolean@nasa.gov | 1999-10-15T00:00:00.000Z |
+
+---
+
+[View on DB Fiddle](https://www.db-fiddle.com/f/iQAEYktwysXqcLQHv2dwbc/0)
